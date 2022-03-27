@@ -28,6 +28,10 @@
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
+          
+          
+          <meta name="theme-color" content="#009485">
+        
       
     
     
@@ -51,16 +55,12 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="teal">
   
     
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -107,28 +107,6 @@
         </div>
       </div>
     </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"/></svg>
-            </label>
-          
-        
-      </form>
     
     
     
@@ -482,10 +460,6 @@
                 
 
 
-<div class="admonition error">
-<p class="admonition-title">raise NotImplementedError</p>
-<p>Данная глава ещё не переписана под aiogram 3.x и содержит текст про aiogram 2.x </p>
-</div>
 <h1 id="fsm">Конечные автоматы (FSM)<a class="headerlink" href="#fsm" title="Permanent link">&para;</a></h1>
 <h2 id="_1">Теория<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>В этой главе мы поговорим о, пожалуй, самой важной возможности ботов: о <strong>системе диалогов</strong>. К сожалению, далеко не все 
@@ -626,7 +600,7 @@
 К моменту перехода к строке 6 мы уже уверены, что пользователь указал корректное название блюда, поэтому можно спокойно 
 сохранить полученный текст в хранилище данных FSM. Концептуально это словарь, поэтому воспользуемся функцией 
 <code>update_data()</code> и сохраним текст сообщения под ключом <code>chosen_food</code> и со значением <code>message.text.lower()</code>.<br />
-В строке 12 мы готовый продвинуть пользователя на следующий шаг, поэтому просто вызываем метод <code>next()</code> у класса <code>OrderFood</code>. 
+В строке 12 мы готовы продвинуть пользователя на следующий шаг, поэтому просто вызываем метод <code>next()</code> у класса <code>OrderFood</code>. 
 Именно для использования <code>next()</code> ранее предлагалось объявлять шаги в нужном порядке. В противном случае пришлось бы 
 указывать целиком <code>await OrderFood.waiting_for_food_size.set()</code>.</p>
 <p>Осталось реализовать последнюю функцию, которая отвечает за получение размера порции (с аналогичной проверкой ввода) и 
@@ -785,7 +759,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2020-2022 Groosha
+      Copyright &copy; 2020-2021 Groosha
     </div>
   
   

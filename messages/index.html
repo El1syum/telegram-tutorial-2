@@ -28,6 +28,10 @@
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
+          
+          
+          <meta name="theme-color" content="#009485">
+        
       
     
     
@@ -51,16 +55,12 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="teal">
   
     
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -107,28 +107,6 @@
         </div>
       </div>
     </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69z"/></svg>
-            </label>
-          
-        
-      </form>
     
     
     
@@ -300,20 +278,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Медиафайлы
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Бонус
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -400,20 +364,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Медиафайлы
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Бонус
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -428,17 +378,13 @@
                 
 
 
-<div class="admonition error">
-<p class="admonition-title">raise NotImplementedError</p>
-<p>Данная глава ещё не переписана под aiogram 3.x и содержит текст про aiogram 2.x </p>
-</div>
 <h1 id="_1">Работа с сообщениями<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>В этой главе мы разберёмся, как применять различные типы форматирования к сообщениям и работать с медиафайлами. </p>
 <h2 id="_2">Текст<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Обработка текстовых сообщений — это, пожалуй, одно из важнейших действий у большинства ботов. Текстом можно выразить 
 практически что угодно и при этом подавать информацию хочется <em>красиво</em>. В распоряжении у разработчика имеется три способа 
 разметки текста: HTML, Markdown и MarkdownV2. Наиболее продвинутыми из них считаются HTML и MarkdownV2, «классический» 
-маркдаун оставлен для обеспечения обратной совместимости и поддерживает меньше возможностей.</p>
+Markdown поддерживает меньше возможностей и более не используется в aiogram.</p>
 <p>За выбор форматирования при отправке сообщений отвечает аргумент <code>parse_mode</code>, например:
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span>
 
@@ -450,14 +396,15 @@
 <p><img alt="Hello world с разным форматированием" src="../images/messages/l02_1.png" /></p>
 <p>Если в боте повсеместно используется определённое форматирование, то каждый раз указывать аргумент <code>parse_mode</code> довольно 
 накладно. К счастью, в aiogram можно передать необходимый тип прямо в объект <strong>Bot</strong>, а если в каком-то конкретном случае 
-нужно обойтись без этих ваших разметок, то просто укажите <code>parse_mode=""</code> (пустая строка):</p>
-<div class="highlight"><pre><span></span><code><span class="n">bot</span> <span class="o">=</span> <span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;123:abcxyz&quot;</span><span class="p">,</span> <span class="n">parse_mode</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">ParseMode</span><span class="o">.</span><span class="n">HTML</span><span class="p">)</span>
+нужно обойтись без этих ваших разметок, то просто укажите <code>parse_mode=None</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bot</span> <span class="o">=</span> <span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;123:abcxyz&quot;</span><span class="p">,</span> <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span><span class="p">)</span>
 
 <span class="c1"># где-то в функции...</span>
 <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Сообщение с &lt;u&gt;HTML-разметкой&lt;/u&gt;&quot;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Сообщение без &lt;s&gt;какой-либо разметки&lt;/s&gt;&quot;</span><span class="p">,</span> <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Сообщение без &lt;s&gt;какой-либо разметки&lt;/s&gt;&quot;</span><span class="p">,</span> <span class="n">parse_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="Настройка типа разметки по умолчанию" src="../images/messages/l02_2.png" /></p>
+<h1 id="todo">todo<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h1>
 <p>Существует и более «программный» или даже «динамический» способ формирования сообщения.
 Для этого нужно импортировать модуль markdown из aiogram.utils, который, несмотря на название, поддерживает и HTML тоже.
 Далее вызовите функцию <code>text()</code>, в которую передайте произвольное число таких же вызовов функции <code>text()</code>.
@@ -626,7 +573,7 @@ Telegram Client API, а не с Telegram Bot API, например, <a href="htt
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2020-2022 Groosha
+      Copyright &copy; 2020-2021 Groosha
     </div>
   
   
